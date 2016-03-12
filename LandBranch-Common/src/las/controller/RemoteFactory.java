@@ -19,15 +19,11 @@ public interface RemoteFactory extends Remote {
 
     public GramaNiladariDivisionController getGramaNiladaryDivisionController() throws RemoteException, SQLException, ClassNotFoundException;
 
-    public GrantController getGrantController() throws RemoteException, SQLException, ClassNotFoundException;
-
     public LandController getLandController() throws RemoteException, SQLException, ClassNotFoundException;
 
     public LotController getLotController() throws RemoteException, SQLException, ClassNotFoundException;
 
     public NominatedSuccessorController getNominatedSuccessorController() throws RemoteException, SQLException, ClassNotFoundException;
-
-    public PermitController getPermitController() throws RemoteException, SQLException, ClassNotFoundException;
 
     public UserController getUeController() throws RemoteException, SQLException, ClassNotFoundException;
 

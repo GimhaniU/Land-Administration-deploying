@@ -22,7 +22,9 @@ public class Lot implements Serializable {
     private int is_p_certified=0;
     private String grantNumber;
     private String grantIssueDate;
-     
+    
+    
+    private Client client;
     private Land land;
 
     public Lot(String landNumber, String lotNumber, int numberOfAcres, int numberofRoods, int numberOfPerches) {
@@ -56,6 +58,27 @@ public class Lot implements Serializable {
         this.grantNumber = grantNumber;
         this.grantIssueDate = grantIssueDate;
         this.land = land;
+    }
+    
+    public Lot(String landNumber, String lotNumber, int numberOfAcres, int numberofRoods, int numberOfPerches, String permitNumber, String permitIssueDate, String grantNumber, String grantIssueDate, Client client) {
+        this.landNumber = landNumber;
+        this.lotNumber = lotNumber;
+        this.numberOfAcres = numberOfAcres;
+        this.numberofRoods = numberofRoods;
+        this.numberOfPerches = numberOfPerches;
+        this.permitNumber = permitNumber;
+        this.permitIssueDate = permitIssueDate;
+        this.grantNumber = grantNumber;
+        this.grantIssueDate = grantIssueDate;
+        this.client = client;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public String getLandNumber() {

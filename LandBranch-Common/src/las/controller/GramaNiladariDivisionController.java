@@ -7,15 +7,11 @@ package las.controller;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import las.models.Client;
 import las.models.GramaNiladariDivision;
 import las.models.Lot;
-import las.models.NominatedSuccessor;
-import las.models.Permit;
+
 
 /**
  *
@@ -37,7 +33,7 @@ public interface GramaNiladariDivisionController extends Remote {
 
     public ArrayList<GramaNiladariDivision> getLandCount() throws RemoteException, ClassNotFoundException, SQLException;
 
-    public ArrayList<Permit> getPermitsToCertify(String divisionnumber) throws RemoteException,SQLException, ClassNotFoundException;
+    public ArrayList<Lot> getPermitsToCertify(String divisionnumber) throws RemoteException,SQLException, ClassNotFoundException;
 
-    public ArrayList<Permit> getAllPermitsToCertify() throws RemoteException,SQLException, ClassNotFoundException;
+    public ArrayList<Lot> getAllPermitsToCertify() throws RemoteException,SQLException, ClassNotFoundException;
 }
