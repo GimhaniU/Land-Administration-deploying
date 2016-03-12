@@ -15,51 +15,43 @@ public class Client implements Serializable{
 
     private int regNo;
     private String clientName;
-    private String NIC;
-    private String birthday;
-    private String telephone;
-    private double annualIncome;
+    private String NIC; 
+    private String landnumber;
+    private String lotnumber;
     private String address;
-
+    private double annualIncome;
+    private int permitOwnershipPosition;
+    private int grantOwnershipPosition;
     private int marriedStatus;
+    private String spouseName;
+    private String gender;
     private int numberOfMarriedSons;
     private int numberOfUnmarriedSons;
 
-    private int permitOwnershipPosition;
-    private int grantOwnershipPosition;
+    
+    
 
     Client() {
 
     }
 
-    public Client(String NIC, String clientName, String birthday, String telephone, String address, double annualIncome, int grantOwnershipPosition, int permitOwnershipPosition, int marriedStatus, int numberOfMarriedSons, int numberOfUnmarriedSons) {
-        this.clientName = clientName;
-        this.NIC = NIC;
-        this.birthday = birthday;
-        this.telephone = telephone;
-        this.annualIncome = annualIncome;
-        this.address = address;
-        this.marriedStatus = marriedStatus;
-        this.numberOfMarriedSons = numberOfMarriedSons;
-        this.numberOfUnmarriedSons = numberOfUnmarriedSons;
-        this.permitOwnershipPosition = permitOwnershipPosition;
-        this.grantOwnershipPosition = grantOwnershipPosition;
-    }
-
-    public Client(int regNo, String NIC, String clientName, String birthday, String telephone, String address, double annualIncome, int grantOwnershipPosition, int permitOwnershipPosition, int marriedStatus, int numberOfMarriedSons, int numberOfUnmarriedSons) {
+    public Client(int regNo, String clientName, String NIC, String landnumber, String lotnumber, String address, double annualIncome, int permitOwnershipPosition, int grantOwnershipPosition, int marriedStatus, String spouseName, String gender, int numberOfMarriedSons, int numberOfUnmarriedSons) {
         this.regNo = regNo;
         this.clientName = clientName;
         this.NIC = NIC;
-        this.birthday = birthday;
-        this.telephone = telephone;
-        this.annualIncome = annualIncome;
+        this.landnumber = landnumber;
+        this.lotnumber = lotnumber;
         this.address = address;
-        this.marriedStatus = marriedStatus;
-        this.numberOfMarriedSons = numberOfMarriedSons;
-        this.numberOfUnmarriedSons = numberOfUnmarriedSons;
+        this.annualIncome = annualIncome;
         this.permitOwnershipPosition = permitOwnershipPosition;
         this.grantOwnershipPosition = grantOwnershipPosition;
+        this.marriedStatus = marriedStatus;
+        this.spouseName = spouseName;
+        this.gender = gender;
+        this.numberOfMarriedSons = numberOfMarriedSons;
+        this.numberOfUnmarriedSons = numberOfUnmarriedSons;
     }
+
 
     public int getRegNo() {
         return regNo;
@@ -83,14 +75,6 @@ public class Client implements Serializable{
 
     public void setNIC(String NIC) {
         this.NIC = NIC;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
     }
 
     public int isMarried() {
@@ -121,14 +105,6 @@ public class Client implements Serializable{
         return address;
     }
 
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
     public double getAnnualIncome() {
         return annualIncome;
     }
@@ -147,6 +123,38 @@ public class Client implements Serializable{
 
     public void setPermitOwnershipPosition(int permitOwnershipPosition) {
         this.permitOwnershipPosition = permitOwnershipPosition;
+    }
+
+    public String getLandnumber() {
+        return landnumber;
+    }
+
+    public void setLandnumber(String landnumber) {
+        this.landnumber = landnumber;
+    }
+
+    public String getLotnumber() {
+        return lotnumber;
+    }
+
+    public void setLotnumber(String lotnumber) {
+        this.lotnumber = lotnumber;
+    }
+
+    public String getSpouseName() {
+        return spouseName;
+    }
+
+    public void setSpouseName(String spouseName) {
+        this.spouseName = spouseName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public int getGrantOwnershipPosition() {

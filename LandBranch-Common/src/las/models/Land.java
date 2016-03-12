@@ -13,56 +13,43 @@ import java.util.ArrayList;
  * @author Gimhani
  */
 public class Land  implements Serializable{
-    private String planNumber;
+    private String landnumber;
     private String landName;
+    private String planNumber;
     private String divisionNumber;
-    private String westBound;
-    private String eastBound;
-    private String northBound;
-    private String southBound;
+    
     private int NumberOfLot;
     private ArrayList<Lot> lotList;
 
-    public Land(String planNumber, String landName, String divisionNumber, String westBound, String eastBound, String northBound, String southBound, int NumberOfLot) {
-        this.planNumber = planNumber;
+    public Land(String landnumber, String landName, String planNumber, String divisionNumber) {
+        this.landnumber = landnumber;
         this.landName = landName;
+        this.planNumber = planNumber;
         this.divisionNumber = divisionNumber;
-        this.westBound = westBound;
-        this.eastBound = eastBound;
-        this.northBound = northBound;
-        this.southBound = southBound;
+    }
+
+    public Land(String landnumber, String landName, String planNumber, String divisionNumber, int NumberOfLot) {
+        this.landnumber = landnumber;
+        this.landName = landName;
+        this.planNumber = planNumber;
+        this.divisionNumber = divisionNumber;
         this.NumberOfLot = NumberOfLot;
     }
-    
-     public Land(String planNumber, String landName, String divisionNumber, String westBound, String eastBound, String northBound, String southBound) {
-        this.planNumber = planNumber;
-        this.landName = landName;
-        this.divisionNumber = divisionNumber;
-        this.westBound = westBound;
-        this.eastBound = eastBound;
-        this.northBound = northBound;
-        this.southBound = southBound;
-     }
-    
-    public Land(String planNumber, String landName, String divisionNumber, String westBound, String eastBound, String northBound, String southBound, ArrayList<Lot> lotList) {
-        this.planNumber = planNumber;
-        this.landName = landName;
-        this.divisionNumber = divisionNumber;
-        this.westBound = westBound;
-        this.eastBound = eastBound;
-        this.northBound = northBound;
-        this.southBound = southBound;
-        this.lotList=lotList;
-    } 
-    
-    
 
-    public String getPlanNumber() {
-        return planNumber;
+    public Land(String landnumber, String landName, String planNumber, String divisionNumber, ArrayList<Lot> lotList) {
+        this.landnumber = landnumber;
+        this.landName = landName;
+        this.planNumber = planNumber;
+        this.divisionNumber = divisionNumber;
+        this.lotList = lotList;
     }
 
-    public void setPlanNumber(String planNumber) {
-        this.planNumber = planNumber;
+    public String getLandnumber() {
+        return landnumber;
+    }
+
+    public void setLandnumber(String landnumber) {
+        this.landnumber = landnumber;
     }
 
     public String getLandName() {
@@ -73,44 +60,20 @@ public class Land  implements Serializable{
         this.landName = landName;
     }
 
+    public String getPlanNumber() {
+        return planNumber;
+    }
+
+    public void setPlanNumber(String planNumber) {
+        this.planNumber = planNumber;
+    }
+
     public String getDivisionNumber() {
         return divisionNumber;
     }
 
     public void setDivisionNumber(String divisionNumber) {
         this.divisionNumber = divisionNumber;
-    }
-
-    public String getWestBound() {
-        return westBound;
-    }
-
-    public void setWestBound(String westBound) {
-        this.westBound = westBound;
-    }
-
-    public String getSouthBound() {
-        return southBound;
-    }
-
-    public void setSouthBound(String southBound) {
-        this.southBound = southBound;
-    }
-
-    public String getEastBound() {
-        return eastBound;
-    }
-
-    public void setEastBound(String eastBound) {
-        this.eastBound = eastBound;
-    }
-
-    public String getNorthBound() {
-        return northBound;
-    }
-
-    public void setNorthBound(String northBound) {
-        this.northBound = northBound;
     }
 
     public int getNumberOfLot() {
@@ -128,6 +91,7 @@ public class Land  implements Serializable{
     public void setLotList(ArrayList<Lot> lotList) {
         this.lotList = lotList;
     }
+    
     
     
 }

@@ -56,9 +56,9 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
         incomenotvalidlabel = new javax.swing.JLabel();
         AnnualIncome = new javax.swing.JLabel();
         Status1 = new javax.swing.JLabel();
-        marriedStatusRButton1 = new javax.swing.JRadioButton();
-        singleStatusRButton1 = new javax.swing.JRadioButton();
-        nameText1 = new javax.swing.JTextField();
+        maleRButton = new javax.swing.JRadioButton();
+        femaleRButton = new javax.swing.JRadioButton();
+        spouseNameText = new javax.swing.JTextField();
         Name1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -73,19 +73,19 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         permitNumberText = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        permitNumberText1 = new javax.swing.JTextField();
+        permitIssueDateText = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         lotnolabel = new javax.swing.JLabel();
-        lot_number_test = new javax.swing.JTextField();
+        sucNoText = new javax.swing.JTextField();
         extentlabel = new javax.swing.JLabel();
-        acre_test = new javax.swing.JTextField();
-        perches_test = new javax.swing.JTextField();
-        rood_test = new javax.swing.JTextField();
+        sucNameText = new javax.swing.JTextField();
+        sucNicText = new javax.swing.JTextField();
+        sucPortionText = new javax.swing.JTextField();
         add_lot_buttun = new javax.swing.JToggleButton();
         extentlabel1 = new javax.swing.JLabel();
         extentlabel2 = new javax.swing.JLabel();
-        rood_test1 = new javax.swing.JTextField();
+        sucAddressText = new javax.swing.JTextField();
         extentlabel3 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -239,43 +239,43 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
 
         Status1.setText("Gender:");
 
-        marriedStatusRButton1.setText("Male");
-        marriedStatusRButton1.addChangeListener(new javax.swing.event.ChangeListener() {
+        maleRButton.setText("Male");
+        maleRButton.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                marriedStatusRButton1StateChanged(evt);
+                maleRButtonStateChanged(evt);
             }
         });
-        marriedStatusRButton1.addActionListener(new java.awt.event.ActionListener() {
+        maleRButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                marriedStatusRButton1ActionPerformed(evt);
+                maleRButtonActionPerformed(evt);
             }
         });
-        marriedStatusRButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+        maleRButton.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                marriedStatusRButton1KeyReleased(evt);
+                maleRButtonKeyReleased(evt);
             }
         });
 
-        singleStatusRButton1.setText("Female");
-        singleStatusRButton1.addChangeListener(new javax.swing.event.ChangeListener() {
+        femaleRButton.setText("Female");
+        femaleRButton.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                singleStatusRButton1StateChanged(evt);
+                femaleRButtonStateChanged(evt);
             }
         });
-        singleStatusRButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+        femaleRButton.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                singleStatusRButton1KeyReleased(evt);
+                femaleRButtonKeyReleased(evt);
             }
         });
 
-        nameText1.addActionListener(new java.awt.event.ActionListener() {
+        spouseNameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameText1ActionPerformed(evt);
+                spouseNameTextActionPerformed(evt);
             }
         });
-        nameText1.addKeyListener(new java.awt.event.KeyAdapter() {
+        spouseNameText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                nameText1KeyReleased(evt);
+                spouseNameTextKeyReleased(evt);
             }
         });
 
@@ -302,7 +302,7 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
                             .addGroup(personalDetailPanelLayout.createSequentialGroup()
                                 .addComponent(Name1)
                                 .addGap(23, 23, 23)
-                                .addComponent(nameText1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(spouseNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(personalDetailPanelLayout.createSequentialGroup()
                                 .addGroup(personalDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(RegNo)
@@ -333,9 +333,9 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(singleStatusRButton))
                                     .addGroup(personalDetailPanelLayout.createSequentialGroup()
-                                        .addComponent(marriedStatusRButton1)
+                                        .addComponent(maleRButton)
                                         .addGap(18, 18, 18)
-                                        .addComponent(singleStatusRButton1)))))
+                                        .addComponent(femaleRButton)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -364,8 +364,8 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
                 .addGroup(personalDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Status1)
                     .addGroup(personalDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(singleStatusRButton1)
-                        .addComponent(marriedStatusRButton1)))
+                        .addComponent(femaleRButton)
+                        .addComponent(maleRButton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personalDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Status)
@@ -375,7 +375,7 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personalDetailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Name1)
-                    .addComponent(nameText1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spouseNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(childrenCountPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -474,9 +474,9 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Issued Date:");
 
-        permitNumberText1.addActionListener(new java.awt.event.ActionListener() {
+        permitIssueDateText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                permitNumberText1ActionPerformed(evt);
+                permitIssueDateTextActionPerformed(evt);
             }
         });
 
@@ -486,36 +486,36 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
 
         extentlabel.setText("Name :");
 
-        acre_test.addActionListener(new java.awt.event.ActionListener() {
+        sucNameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                acre_testActionPerformed(evt);
+                sucNameTextActionPerformed(evt);
             }
         });
-        acre_test.addKeyListener(new java.awt.event.KeyAdapter() {
+        sucNameText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                acre_testKeyReleased(evt);
+                sucNameTextKeyReleased(evt);
             }
         });
 
-        perches_test.addActionListener(new java.awt.event.ActionListener() {
+        sucNicText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                perches_testActionPerformed(evt);
+                sucNicTextActionPerformed(evt);
             }
         });
-        perches_test.addKeyListener(new java.awt.event.KeyAdapter() {
+        sucNicText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                perches_testKeyReleased(evt);
+                sucNicTextKeyReleased(evt);
             }
         });
 
-        rood_test.addActionListener(new java.awt.event.ActionListener() {
+        sucPortionText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rood_testActionPerformed(evt);
+                sucPortionTextActionPerformed(evt);
             }
         });
-        rood_test.addKeyListener(new java.awt.event.KeyAdapter() {
+        sucPortionText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                rood_testKeyReleased(evt);
+                sucPortionTextKeyReleased(evt);
             }
         });
 
@@ -535,14 +535,14 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
 
         extentlabel2.setText("Portion:");
 
-        rood_test1.addActionListener(new java.awt.event.ActionListener() {
+        sucAddressText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rood_test1ActionPerformed(evt);
+                sucAddressTextActionPerformed(evt);
             }
         });
-        rood_test1.addKeyListener(new java.awt.event.KeyAdapter() {
+        sucAddressText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                rood_test1KeyReleased(evt);
+                sucAddressTextKeyReleased(evt);
             }
         });
 
@@ -563,18 +563,18 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
                 .addGap(49, 49, 49)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(rood_test1)
+                        .addComponent(sucAddressText)
                         .addGap(459, 459, 459))
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(rood_test, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                        .addComponent(sucPortionText, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                         .addGap(691, 691, 691))
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(lot_number_test, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(sucNoText, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(perches_test, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(acre_test, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(sucNicText, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sucNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(396, 396, 396)
@@ -587,23 +587,23 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lotnolabel)
-                    .addComponent(lot_number_test, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sucNoText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(acre_test, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sucNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(extentlabel))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(extentlabel1)
-                    .addComponent(perches_test, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sucNicText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(extentlabel2)
-                    .addComponent(rood_test, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sucPortionText, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(extentlabel3)
-                    .addComponent(rood_test1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sucAddressText, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(add_lot_buttun, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -683,7 +683,7 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(permitNumberText1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(permitIssueDateText, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(permitNumberText, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -698,7 +698,7 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(permitNumberText1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(permitIssueDateText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1029,115 +1029,115 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
         EnableAddButton();
     }//GEN-LAST:event_annualIncomeTextKeyReleased
 
-    private void marriedStatusRButton1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_marriedStatusRButton1StateChanged
+    private void maleRButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_maleRButtonStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_marriedStatusRButton1StateChanged
+    }//GEN-LAST:event_maleRButtonStateChanged
 
-    private void marriedStatusRButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marriedStatusRButton1ActionPerformed
+    private void maleRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maleRButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_marriedStatusRButton1ActionPerformed
+    }//GEN-LAST:event_maleRButtonActionPerformed
 
-    private void marriedStatusRButton1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_marriedStatusRButton1KeyReleased
+    private void maleRButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_maleRButtonKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_marriedStatusRButton1KeyReleased
+    }//GEN-LAST:event_maleRButtonKeyReleased
 
-    private void singleStatusRButton1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_singleStatusRButton1StateChanged
+    private void femaleRButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_femaleRButtonStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_singleStatusRButton1StateChanged
+    }//GEN-LAST:event_femaleRButtonStateChanged
 
-    private void singleStatusRButton1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_singleStatusRButton1KeyReleased
+    private void femaleRButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_femaleRButtonKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_singleStatusRButton1KeyReleased
+    }//GEN-LAST:event_femaleRButtonKeyReleased
 
-    private void nameText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameText1ActionPerformed
+    private void spouseNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spouseNameTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nameText1ActionPerformed
+    }//GEN-LAST:event_spouseNameTextActionPerformed
 
-    private void nameText1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameText1KeyReleased
+    private void spouseNameTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_spouseNameTextKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_nameText1KeyReleased
+    }//GEN-LAST:event_spouseNameTextKeyReleased
 
     private void permitNumberTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_permitNumberTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_permitNumberTextActionPerformed
 
-    private void permitNumberText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_permitNumberText1ActionPerformed
+    private void permitIssueDateTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_permitIssueDateTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_permitNumberText1ActionPerformed
+    }//GEN-LAST:event_permitIssueDateTextActionPerformed
 
-    private void acre_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acre_testActionPerformed
+    private void sucNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sucNameTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_acre_testActionPerformed
+    }//GEN-LAST:event_sucNameTextActionPerformed
 
-    private void acre_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_acre_testKeyReleased
+    private void sucNameTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sucNameTextKeyReleased
         // TODO add your handling code here:
-        if (acre_test.getText().trim().length() != 0 && perches_test.getText().trim().length() != 0 && rood_test.getText().trim().length() != 0) {
+        if (sucNameText.getText().trim().length() != 0 && sucNicText.getText().trim().length() != 0 && sucPortionText.getText().trim().length() != 0) {
             add_lot_buttun.setEnabled(true);
         }
-        if (acre_test.getText().trim().length() == 0 || perches_test.getText().trim().length() == 0 || rood_test.getText().trim().length() == 0) {
+        if (sucNameText.getText().trim().length() == 0 || sucNicText.getText().trim().length() == 0 || sucPortionText.getText().trim().length() == 0) {
             add_lot_buttun.setEnabled(false);
         }
         acresnotvalidlabel.setVisible(false);
-        String newtext = PatternChecker.checkDecimal(acre_test.getText());
-        acre_test.setText(newtext);
+        String newtext = PatternChecker.checkDecimal(sucNameText.getText());
+        sucNameText.setText(newtext);
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (PatternChecker.checkDecimaldirect(acre_test.getText())) {
-                perches_test.requestFocus();
+            if (PatternChecker.checkDecimaldirect(sucNameText.getText())) {
+                sucNicText.requestFocus();
             } else {
                 acresnotvalidlabel.setVisible(true);
             }
         } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-            perches_test.requestFocus();
+            sucNicText.requestFocus();
         } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
             land_south_test.requestFocus();
         }
-    }//GEN-LAST:event_acre_testKeyReleased
+    }//GEN-LAST:event_sucNameTextKeyReleased
 
-    private void perches_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perches_testActionPerformed
+    private void sucNicTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sucNicTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_perches_testActionPerformed
+    }//GEN-LAST:event_sucNicTextActionPerformed
 
-    private void perches_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_perches_testKeyReleased
+    private void sucNicTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sucNicTextKeyReleased
         // TODO add your handling code here:
-        if (acre_test.getText().trim().length() != 0 && perches_test.getText().trim().length() != 0 && rood_test.getText().trim().length() != 0) {
+        if (sucNameText.getText().trim().length() != 0 && sucNicText.getText().trim().length() != 0 && sucPortionText.getText().trim().length() != 0) {
             add_lot_buttun.setEnabled(true);
         }
-        if (acre_test.getText().trim().length() == 0 || perches_test.getText().trim().length() == 0 || rood_test.getText().trim().length() == 0) {
+        if (sucNameText.getText().trim().length() == 0 || sucNicText.getText().trim().length() == 0 || sucPortionText.getText().trim().length() == 0) {
             add_lot_buttun.setEnabled(false);
         }
         perchesnotvalidlabel.setVisible(false);
-        String newtext = PatternChecker.checkDecimal(perches_test.getText());
-        perches_test.setText(newtext);
+        String newtext = PatternChecker.checkDecimal(sucNicText.getText());
+        sucNicText.setText(newtext);
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (PatternChecker.checkDecimaldirect(perches_test.getText())) {
-                rood_test.requestFocus();
+            if (PatternChecker.checkDecimaldirect(sucNicText.getText())) {
+                sucPortionText.requestFocus();
             } else {
                 perchesnotvalidlabel.setVisible(true);
             }
         } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
-            rood_test.requestFocus();
+            sucPortionText.requestFocus();
         } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            acre_test.requestFocus();
+            sucNameText.requestFocus();
         }
-    }//GEN-LAST:event_perches_testKeyReleased
+    }//GEN-LAST:event_sucNicTextKeyReleased
 
-    private void rood_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rood_testActionPerformed
+    private void sucPortionTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sucPortionTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rood_testActionPerformed
+    }//GEN-LAST:event_sucPortionTextActionPerformed
 
-    private void rood_testKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rood_testKeyReleased
+    private void sucPortionTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sucPortionTextKeyReleased
         // TODO add your handling code here:
-        if (acre_test.getText().trim().length() != 0 && perches_test.getText().trim().length() != 0 && rood_test.getText().trim().length() != 0) {
+        if (sucNameText.getText().trim().length() != 0 && sucNicText.getText().trim().length() != 0 && sucPortionText.getText().trim().length() != 0) {
             add_lot_buttun.setEnabled(true);
         }
-        if (acre_test.getText().trim().length() == 0 || perches_test.getText().trim().length() == 0 || rood_test.getText().trim().length() == 0) {
+        if (sucNameText.getText().trim().length() == 0 || sucNicText.getText().trim().length() == 0 || sucPortionText.getText().trim().length() == 0) {
             add_lot_buttun.setEnabled(false);
         }
         roodsnotvalidlabel.setVisible(false);
-        String newtext = PatternChecker.checkDecimal(rood_test.getText());
-        rood_test.setText(newtext);
+        String newtext = PatternChecker.checkDecimal(sucPortionText.getText());
+        sucPortionText.setText(newtext);
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (PatternChecker.checkDecimaldirect(rood_test.getText())) {
+            if (PatternChecker.checkDecimaldirect(sucPortionText.getText())) {
                 add_lot_buttun.requestFocus();
             } else {
                 perchesnotvalidlabel.setVisible(true);
@@ -1145,36 +1145,36 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
         } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
             add_lot_buttun.requestFocus();
         } else if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            perches_test.requestFocus();
+            sucNicText.requestFocus();
         }
-    }//GEN-LAST:event_rood_testKeyReleased
+    }//GEN-LAST:event_sucPortionTextKeyReleased
 
     private void add_lot_buttunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_lot_buttunActionPerformed
 
         DefaultTableModel tableModel = (DefaultTableModel) lot_table.getModel();
-        Object[] rawdata = {lot_number_test.getText(), acre_test.getText(), perches_test.getText(), rood_test.getText()};
+        Object[] rawdata = {sucNoText.getText(), sucNameText.getText(), sucNicText.getText(), sucPortionText.getText()};
         tableModel.addRow(rawdata);
-        acre_test.setText("");
-        perches_test.setText("");
-        rood_test.setText("");
-        lot_number_test.setText(IdGenerator.generateNextLotNumber(lot_number_test.getText()));
+        sucNameText.setText("");
+        sucNicText.setText("");
+        sucPortionText.setText("");
+        sucNoText.setText(IdGenerator.generateNextLotNumber(sucNoText.getText()));
         add_lot_buttun.setEnabled(false);
     }//GEN-LAST:event_add_lot_buttunActionPerformed
 
     private void add_lot_buttunKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_add_lot_buttunKeyReleased
         // TODO add your handling code here
         if (evt.getKeyCode() == KeyEvent.VK_UP) {
-            rood_test.requestFocus();
+            sucPortionText.requestFocus();
         }
     }//GEN-LAST:event_add_lot_buttunKeyReleased
 
-    private void rood_test1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rood_test1ActionPerformed
+    private void sucAddressTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sucAddressTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rood_test1ActionPerformed
+    }//GEN-LAST:event_sucAddressTextActionPerformed
 
-    private void rood_test1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rood_test1KeyReleased
+    private void sucAddressTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sucAddressTextKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_rood_test1KeyReleased
+    }//GEN-LAST:event_sucAddressTextKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1189,7 +1189,6 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel RegNo;
     private javax.swing.JLabel Status;
     private javax.swing.JLabel Status1;
-    private javax.swing.JTextField acre_test;
     private javax.swing.JButton addNewLandButton;
     private javax.swing.JToggleButton add_lot_buttun;
     private javax.swing.JTextArea addressText;
@@ -1199,6 +1198,7 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel extentlabel1;
     private javax.swing.JLabel extentlabel2;
     private javax.swing.JLabel extentlabel3;
+    private javax.swing.JRadioButton femaleRButton;
     private javax.swing.JLabel incomenotvalidlabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -1220,28 +1220,28 @@ public class ApplicationForm1 extends javax.swing.JInternalFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JComboBox<String> landCombo;
     private javax.swing.JComboBox<String> lotCombo;
-    private javax.swing.JTextField lot_number_test;
     private javax.swing.JTable lot_table;
     private javax.swing.JLabel lotnolabel;
+    private javax.swing.JRadioButton maleRButton;
     private javax.swing.JSpinner marriedChildrenCountSpinner;
     private javax.swing.JRadioButton marriedStatusRButton;
-    private javax.swing.JRadioButton marriedStatusRButton1;
     private javax.swing.JTextField nameText;
-    private javax.swing.JTextField nameText1;
     private javax.swing.JLabel namenotvalidlabel;
     private javax.swing.JPanel newApplicantTab;
     private javax.swing.JTextField nicText;
     private javax.swing.JLabel nicnotvalidlabel;
-    private javax.swing.JTextField perches_test;
+    private javax.swing.JTextField permitIssueDateText;
     private javax.swing.JTextField permitNumberText;
-    private javax.swing.JTextField permitNumberText1;
     private javax.swing.JPanel personalDetailPanel;
     private javax.swing.JTextField regNotext;
     private javax.swing.JButton registerButton;
-    private javax.swing.JTextField rood_test;
-    private javax.swing.JTextField rood_test1;
     private javax.swing.JRadioButton singleStatusRButton;
-    private javax.swing.JRadioButton singleStatusRButton1;
+    private javax.swing.JTextField spouseNameText;
+    private javax.swing.JTextField sucAddressText;
+    private javax.swing.JTextField sucNameText;
+    private javax.swing.JTextField sucNicText;
+    private javax.swing.JTextField sucNoText;
+    private javax.swing.JTextField sucPortionText;
     private javax.swing.JSpinner unmarriedChildrenCountSpinner;
     // End of variables declaration//GEN-END:variables
 }

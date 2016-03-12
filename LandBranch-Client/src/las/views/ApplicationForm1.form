@@ -146,7 +146,7 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="Name1" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                      <Component id="nameText1" min="-2" pref="417" max="-2" attributes="0"/>
+                                                      <Component id="spouseNameText" min="-2" pref="417" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -186,9 +186,9 @@
                                                               <Component id="singleStatusRButton" min="-2" max="-2" attributes="0"/>
                                                           </Group>
                                                           <Group type="102" attributes="0">
-                                                              <Component id="marriedStatusRButton1" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="maleRButton" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                              <Component id="singleStatusRButton1" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="femaleRButton" min="-2" max="-2" attributes="0"/>
                                                           </Group>
                                                       </Group>
                                                   </Group>
@@ -229,8 +229,8 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="Status1" min="-2" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                              <Component id="singleStatusRButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="marriedStatusRButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="femaleRButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="maleRButton" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -244,7 +244,7 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="Name1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="nameText1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                          <Component id="spouseNameText" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="childrenCountPanel" min="-2" max="-2" attributes="0"/>
@@ -443,29 +443,29 @@
                                 <Property name="text" type="java.lang.String" value="Gender:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="marriedStatusRButton1">
+                            <Component class="javax.swing.JRadioButton" name="maleRButton">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Male"/>
                               </Properties>
                               <Events>
-                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="marriedStatusRButton1StateChanged"/>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="marriedStatusRButton1ActionPerformed"/>
-                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="marriedStatusRButton1KeyReleased"/>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="maleRButtonStateChanged"/>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="maleRButtonActionPerformed"/>
+                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="maleRButtonKeyReleased"/>
                               </Events>
                             </Component>
-                            <Component class="javax.swing.JRadioButton" name="singleStatusRButton1">
+                            <Component class="javax.swing.JRadioButton" name="femaleRButton">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Female"/>
                               </Properties>
                               <Events>
-                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="singleStatusRButton1StateChanged"/>
-                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="singleStatusRButton1KeyReleased"/>
+                                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="femaleRButtonStateChanged"/>
+                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="femaleRButtonKeyReleased"/>
                               </Events>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="nameText1">
+                            <Component class="javax.swing.JTextField" name="spouseNameText">
                               <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nameText1ActionPerformed"/>
-                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nameText1KeyReleased"/>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="spouseNameTextActionPerformed"/>
+                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="spouseNameTextKeyReleased"/>
                               </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="Name1">
@@ -636,7 +636,7 @@
                                               </Group>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="permitNumberText1" min="-2" pref="208" max="-2" attributes="0"/>
+                                                  <Component id="permitIssueDateText" min="-2" pref="208" max="-2" attributes="0"/>
                                                   <Component id="permitNumberText" min="-2" pref="452" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -657,7 +657,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="permitNumberText1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="permitIssueDateText" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
@@ -682,9 +682,9 @@
                                 <Property name="text" type="java.lang.String" value="Issued Date:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="permitNumberText1">
+                            <Component class="javax.swing.JTextField" name="permitIssueDateText">
                               <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="permitNumberText1ActionPerformed"/>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="permitIssueDateTextActionPerformed"/>
                               </Events>
                             </Component>
                             <Container class="javax.swing.JPanel" name="jPanel7">
@@ -743,21 +743,21 @@
                                               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" attributes="0">
-                                                      <Component id="rood_test1" max="32767" attributes="0"/>
+                                                      <Component id="sucAddressText" max="32767" attributes="0"/>
                                                       <EmptySpace min="-2" pref="459" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" attributes="0">
-                                                      <Component id="rood_test" pref="70" max="32767" attributes="0"/>
+                                                      <Component id="sucPortionText" pref="70" max="32767" attributes="0"/>
                                                       <EmptySpace min="-2" pref="691" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" attributes="0">
-                                                      <Component id="lot_number_test" min="-2" pref="103" max="-2" attributes="0"/>
+                                                      <Component id="sucNoText" min="-2" pref="103" max="-2" attributes="0"/>
                                                       <EmptySpace max="32767" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="perches_test" min="-2" pref="218" max="-2" attributes="0"/>
-                                                          <Component id="acre_test" min="-2" pref="587" max="-2" attributes="0"/>
+                                                          <Component id="sucNicText" min="-2" pref="218" max="-2" attributes="0"/>
+                                                          <Component id="sucNameText" min="-2" pref="587" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                   </Group>
@@ -776,27 +776,27 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="lotnolabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="lot_number_test" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="sucNoText" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="acre_test" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                                  <Component id="sucNameText" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                                   <Component id="extentlabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="extentlabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="perches_test" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="sucNicText" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="extentlabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="rood_test" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                                  <Component id="sucPortionText" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="extentlabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="rood_test1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                                  <Component id="sucAddressText" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="add_lot_buttun" min="-2" pref="32" max="-2" attributes="0"/>
@@ -811,29 +811,29 @@
                                         <Property name="text" type="java.lang.String" value="Suc. No"/>
                                       </Properties>
                                     </Component>
-                                    <Component class="javax.swing.JTextField" name="lot_number_test">
+                                    <Component class="javax.swing.JTextField" name="sucNoText">
                                     </Component>
                                     <Component class="javax.swing.JLabel" name="extentlabel">
                                       <Properties>
                                         <Property name="text" type="java.lang.String" value="Name :"/>
                                       </Properties>
                                     </Component>
-                                    <Component class="javax.swing.JTextField" name="acre_test">
+                                    <Component class="javax.swing.JTextField" name="sucNameText">
                                       <Events>
-                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="acre_testActionPerformed"/>
-                                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="acre_testKeyReleased"/>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sucNameTextActionPerformed"/>
+                                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sucNameTextKeyReleased"/>
                                       </Events>
                                     </Component>
-                                    <Component class="javax.swing.JTextField" name="perches_test">
+                                    <Component class="javax.swing.JTextField" name="sucNicText">
                                       <Events>
-                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="perches_testActionPerformed"/>
-                                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="perches_testKeyReleased"/>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sucNicTextActionPerformed"/>
+                                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sucNicTextKeyReleased"/>
                                       </Events>
                                     </Component>
-                                    <Component class="javax.swing.JTextField" name="rood_test">
+                                    <Component class="javax.swing.JTextField" name="sucPortionText">
                                       <Events>
-                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rood_testActionPerformed"/>
-                                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rood_testKeyReleased"/>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sucPortionTextActionPerformed"/>
+                                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sucPortionTextKeyReleased"/>
                                       </Events>
                                     </Component>
                                     <Component class="javax.swing.JToggleButton" name="add_lot_buttun">
@@ -855,10 +855,10 @@
                                         <Property name="text" type="java.lang.String" value="Portion:"/>
                                       </Properties>
                                     </Component>
-                                    <Component class="javax.swing.JTextField" name="rood_test1">
+                                    <Component class="javax.swing.JTextField" name="sucAddressText">
                                       <Events>
-                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rood_test1ActionPerformed"/>
-                                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rood_test1KeyReleased"/>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sucAddressTextActionPerformed"/>
+                                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sucAddressTextKeyReleased"/>
                                       </Events>
                                     </Component>
                                     <Component class="javax.swing.JLabel" name="extentlabel3">
