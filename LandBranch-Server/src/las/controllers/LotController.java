@@ -19,6 +19,8 @@ import las.models.Lot;
  *
  * @author Gimhani
  */
+
+
 public class LotController {
 
     private static final ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();

@@ -5,6 +5,7 @@
  */
 package las.controllers;
 
+import com.sun.imageio.plugins.jpeg.JPEG;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,16 +21,16 @@ import las.models.NominatedSuccessor;
 public class NominatedSuccessorController {
 
     private static final ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
-
-    public static NominatedSuccessor searchNominateSuccessor(String NICS) throws ClassNotFoundException, SQLException {
+    
+    
+    public static NominatedSuccessor searchNominateSuccessor(int N_RegNo) throws ClassNotFoundException, SQLException {
         try {
             readWriteLock.readLock().lock();
-
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Select * from NominatedSuccessor where NIC_S='" + NICS + "'";
-            ResultSet rst = DBHandler.getData(conn, sql);
+            String sql = "Select * from NominatedSuccessor where N_RegNo='" + N_RegNo+ "'";
+           ResultSet rst = DBHandler.getData(conn, sql);
             if (rst.next()) {
-                NominatedSuccessor nominateSuccessor = new NominatedSuccessor(rst.getString("NIC_S"), rst.getString("Name"), rst.getString("Address"));
+                NominatedSuccessor nominateSuccessor = new NominatedSuccessor(N_RegNo, rst.getString("Name"),rst.getString("NIC_S"), rst.getString("Address"),rst.getInt("RegNo"),rst.getDouble("Portion"),rst.getString("relationship"));
                 return nominateSuccessor;
             } else {
                 return null;
@@ -41,24 +42,22 @@ public class NominatedSuccessorController {
     }
 
     public static boolean addNewNominateSuccessor(NominatedSuccessor NOS) throws ClassNotFoundException, SQLException {
-
         try {
             readWriteLock.writeLock().lock();
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Insert into nominatedsuccessor Values('" + NOS.getName() + "','" + NOS.getNIC_S() + "','" + NOS.getAddress() + "')";
+            String sql = "Insert into nominatedsuccessor Values('" + NOS.getN_RegNo() + "','" + NOS.getName() + "','"+NOS.getNIC_S()+"','" + NOS.getAddress() + "','"+NOS.getOwner_reg_no()+"','"+NOS.getPortion()+"','"+NOS.getRelationship()+"')";
             int returnValue = DBHandler.setData(conn, sql);
             return returnValue > 0;
-
         } finally {
             readWriteLock.writeLock().unlock();
         }
     }
-
+    
     public static boolean updateNiminateSuccessor(NominatedSuccessor nominateSuccessor) throws ClassNotFoundException, SQLException {
         try {
             readWriteLock.writeLock().lock();
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Update  nominatedsuccessor Set  Name='" + nominateSuccessor.getName() + "', Address='" + nominateSuccessor.getAddress() + "' Where NIC_S ='" + nominateSuccessor.getNIC_S() + "'";
+            String sql = "Update  nominatedsuccessor Set  Name='" + nominateSuccessor.getName() + "', Address='" + nominateSuccessor.getAddress() + "' ,RegNo='"+nominateSuccessor.getOwner_reg_no()+"', Portion='"+nominateSuccessor.getPortion()+"',Relationship='"+nominateSuccessor.getRelationship()+"'   Where N_RegNo ='" + nominateSuccessor.getN_RegNo() + "'";
             int res = DBHandler.setData(conn, sql);
             return res > 0;
 
@@ -66,12 +65,12 @@ public class NominatedSuccessorController {
             readWriteLock.writeLock().unlock();
         }
     }
-
-    public static boolean DeleteNominatedSuccessor(String nic) throws ClassNotFoundException, SQLException {
+    
+    public static boolean DeleteNominatedSuccessor(int N_RegNo) throws ClassNotFoundException, SQLException {
         Connection conn = DBConnection.getDBConnection().getConnection();
-        String sql = "Delete  from nominatedSuccessor where NIC_S = '" + nic + "'";
+        String sql = "Delete  from nominatedSuccessor where N_RegNo = '" + N_RegNo+ "'";
         int returnDelete = DBHandler.setData(conn, sql);
         return returnDelete > 0;
     }
-
+    
 }
