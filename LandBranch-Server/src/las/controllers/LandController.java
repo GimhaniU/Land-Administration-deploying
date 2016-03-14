@@ -31,7 +31,7 @@ public class LandController {
             Connection conn = DBConnection.getDBConnection().getConnection();
             conn.setAutoCommit(false);
             try {
-                String sql = "Insert into Land Values('" + land.getPlanNumber() + "','" + land.getLandName() + "','" + land.getDivisionNumber() + "','" + land.getWestBound() + "','" + land.getEastBound() + "','" + land.getNorthBound() + "','" + land.getSouthBound() + "')";
+                String sql = "Insert into Land Values('" + land.getLandName() + "','" + land.getLandName() + "','" + land.getPlanNumber() + "','" + land.getDivisionNumber() + "')";
                 int returnInt = DBHandler.setData(conn, sql);
                 if (returnInt > 0) {
                     System.out.println("land add");
@@ -79,10 +79,10 @@ public class LandController {
         try {
             readWriteLock.readLock().lock();
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Select * From Land order by PlanNumber Desc limit 1";
+            String sql = "Select * From Land order by landNumber Desc limit 1";
             ResultSet rst = DBHandler.getData(conn, sql);
             if (rst.next()) {
-                Land land = new Land(rst.getString("PlanNumber"), rst.getString("LandName"), rst.getString("DivisionNumber"), rst.getString("WestBound"), rst.getString("EastBound"), rst.getString("NorthBound"), rst.getString("SouthBound"));
+                Land land = new Land(rst.getString("LandNumber"), rst.getString("LandName"), rst.getString("planNumber"),rst.getString("DivisionNumber"));
                 return land;
             } else {
                 return null;
@@ -93,16 +93,16 @@ public class LandController {
 
     }
 
-    public static Land searchLand(String PlanNumber) throws ClassNotFoundException, SQLException {
+    public static Land searchLand(String landNumber) throws ClassNotFoundException, SQLException {
         try {
 
             readWriteLock.readLock().lock();
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Select * From Land where PlanNumber = '" + PlanNumber + "'";
+            String sql = "Select * From Land where landNumber = '" + landNumber + "'";
             ResultSet rst = DBHandler.getData(conn, sql);
             if (rst.next()) {
-                ArrayList<Lot> searchLotOfLand = LotController.searchLotOfLand(PlanNumber);
-                Land land = new Land(rst.getString("PlanNumber"), rst.getString("LandName"), rst.getString("DivisionNumber"), rst.getString("WestBound"), rst.getString("EastBound"), rst.getString("NorthBound"), rst.getString("SouthBound"), searchLotOfLand);
+                ArrayList<Lot> searchLotOfLand = LotController.searchLotOfLand(landNumber);
+                Land land = new Land(rst.getString("LandNumber"), rst.getString("LandName"), rst.getString("planNumber"),rst.getString("DivisionNumber"),searchLotOfLand);
                 return land;
             } else {
                 return null;
@@ -113,16 +113,16 @@ public class LandController {
 
     }
 
-    public static Land getAvailableLotOfLand(String PlanNumber) throws ClassNotFoundException, SQLException {
+    public static Land getAvailableLotOfLand(String landNumber) throws ClassNotFoundException, SQLException {
         try {
             readWriteLock.readLock().lock();
 
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Select * From Land where PlanNumber = '" + PlanNumber + "'";
+            String sql = "Select * From Land where landNumber = '" + landNumber + "'";
             ResultSet rst = DBHandler.getData(conn, sql);
             if (rst.next()) {
-                ArrayList<Lot> searchLotOfLand = LotController.getAvailableLotOfLand(PlanNumber);
-                Land land = new Land(rst.getString("PlanNumber"), rst.getString("LandName"), rst.getString("DivisionNumber"), rst.getString("WestBound"), rst.getString("EastBound"), rst.getString("NorthBound"), rst.getString("SouthBound"), searchLotOfLand);
+                ArrayList<Lot> searchLotOfLand = LotController.getAvailableLotOfLand(landNumber);
+                Land land = new Land(rst.getString("LandNumber"), rst.getString("LandName"), rst.getString("planNumber"),rst.getString("DivisionNumber"),searchLotOfLand);
                 return land;
             } else {
                 return null;
@@ -137,11 +137,11 @@ public class LandController {
         try {
             readWriteLock.readLock().lock();
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Select PlanNumber,LandName,DivisionNumber,WestBound,EastBound,SouthBound,NorthBound,count(LotNumber) as NumberOfLots  From Land natural join lot group by PlanNumber";
+            String sql = "Select LandNumber,LandName,DivisionNumber,planNumber,count(LotNumber) as NumberOfLots  From Land natural join lot group by landNumber";
             ResultSet rst = DBHandler.getData(conn, sql);
             ArrayList<Land> landlist = new ArrayList<>();
             while (rst.next()) {
-                Land land = new Land(rst.getString("PlanNumber"), rst.getString("LandName"), rst.getString("DivisionNumber"), rst.getString("WestBound"), rst.getString("EastBound"), rst.getString("NorthBound"), rst.getString("SouthBound"), rst.getInt("NumberOfLots"));
+                Land land = new Land(rst.getString("LandNumber"), rst.getString("LandName"), rst.getString("planNumber"),rst.getString("DivisionNumber"),rst.getInt("NumberOfLots"));
                 landlist.add(land);
             }
             return landlist;
@@ -151,19 +151,19 @@ public class LandController {
 
     }
 
-    public static ArrayList<Land> getSimmilarPlanNumbers(String planNumberPart) throws ClassNotFoundException, SQLException {
+    public static ArrayList<Land> getSimmilarPlanNumbers(String landNumberPart) throws ClassNotFoundException, SQLException {
 
         try {
             readWriteLock.readLock().lock();
 
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Select * From land where planNumber like '" + planNumberPart + "%'  order by planNumber limit 10";
+            String sql = "Select * From land where landNumber like '" + landNumberPart + "%'  order by landNumber limit 10";
             ResultSet rst = DBHandler.getData(conn, sql);
             ArrayList<Land> landList = new ArrayList<>();
             while (rst.next()) {
-                Land GND = new Land(rst.getString("planNumber"), rst.getString("landName"), rst.getString("DivisionNumber"), rst.getString("WestBound"), rst.getString("EastBound"), rst.getString("NorthBound"), rst.getString("SouthBound"));
-                landList.add(GND);
-            }
+               Land land = new Land(rst.getString("LandNumber"), rst.getString("LandName"), rst.getString("planNumber"),rst.getString("DivisionNumber"),rst.getInt("NumberOfLots"));
+                landList.add(land);
+             }
             return landList;
         } finally {
             readWriteLock.readLock().unlock();
@@ -180,8 +180,8 @@ public class LandController {
             ResultSet rst = DBHandler.getData(conn, sql);
             ArrayList<Land> landList = new ArrayList<>();
             while (rst.next()) {
-                Land GND = new Land(rst.getString("planNumber"), rst.getString("landName"), rst.getString("DivisionNumber"), rst.getString("WestBound"), rst.getString("EastBound"), rst.getString("NorthBound"), rst.getString("SouthBound"));
-                landList.add(GND);
+               Land land = new Land(rst.getString("LandNumber"), rst.getString("LandName"), rst.getString("planNumber"),rst.getString("DivisionNumber"),rst.getInt("NumberOfLots"));
+                landList.add(land);
             }
             return landList;
         } finally {
@@ -198,7 +198,7 @@ public class LandController {
             Connection conn = DBConnection.getDBConnection().getConnection();
             conn.setAutoCommit(false);
             try {
-                String sql = "Update  Land Set  LandName='" + land.getLandName() + "', DivisionNumber='" + land.getDivisionNumber() + "',EastBound='" + land.getEastBound() + "',WestBound='" + land.getWestBound() + "',NorthBound='" + land.getNorthBound() + "',SouthBound='" + land.getSouthBound() + "' Where  PlanNumber='" + land.getPlanNumber() + "'";
+                String sql = "Update  Land Set  LandName='" + land.getLandName() + "', DivisionNumber='" + land.getDivisionNumber() + "' Where  landNumber='" + land.getLandnumber() + "'";
                 int returnInt = DBHandler.setData(conn, sql);
                 if (returnInt > 0) {
                     System.out.println("land update");

@@ -28,7 +28,7 @@ public class LotController {
             readWriteLock.writeLock().lock();
 
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Insert into Lot Values('" + lot.getLotNumber() + "','" + lot.getNumberOfAcres() + "','" + lot.getNumberOfPerches() + "','" + lot.getNumberofRoods() + "','" + lot.getLand().getPlanNumber() + "','"+lot.getIsAvilable()+"')";
+            String sql = "Insert into Lot Values('" + lot.getLandNumber() + "','" + lot.getLotNumber() + "','"+lot.getNumberOfAcres()+"','" + lot.getNumberofRoods() + "','" + lot.getNumberOfPerches() + "','" + lot.getPermitNumber() + "','"+lot.getPermitIssueDate()+"','"+lot.getIs_p_certified()+"','"+lot.getGrantNumber()+"','"+lot.getGrantIssueDate()+"')";
             int returnValue = DBHandler.setData(conn, sql);
             return returnValue > 0;
         } finally {
@@ -36,16 +36,15 @@ public class LotController {
         }
     }
 
-    public static Lot searchLot(String lotNumber) throws ClassNotFoundException, SQLException {
+    public static Lot searchLot(String landNumber,String lotNumber) throws ClassNotFoundException, SQLException {
         try {
-
             readWriteLock.readLock().lock();
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Select * from Lot where LotNumber='" + lotNumber + "'";
+            String sql = "Select * from Lot where LotNumber='" + lotNumber + "' and landNumber ='"+landNumber+"'";
             ResultSet rst = DBHandler.getData(conn, sql);
             if (rst.next()) {
-                Land searchLand = LandController.searchLand(rst.getString("PlanNumber"));
-                Lot lot = new Lot(rst.getString("LotNumber"), rst.getInt("NumberOfAcres"), rst.getInt("NumberOfRoods"), rst.getInt("NumberOfPerches"), searchLand);
+                Land searchLand = LandController.searchLand(landNumber);
+                Lot lot = new Lot(landNumber,lotNumber, rst.getInt("numberOfAcres"),rst.getInt("NumberOfRoods"), rst.getInt("NumberOfPerches"),rst.getString("permitNumber"),rst.getString("permitIssueDate"),rst.getString("grantNumber"),rst.getString("grantIssueDate"),searchLand );               
                 return lot;
             } else {
                 return null;
@@ -55,16 +54,17 @@ public class LotController {
         }
     }
 
-    public static ArrayList<Lot> searchLotOfLand(String planNumber) throws ClassNotFoundException, SQLException {
+    public static ArrayList<Lot> searchLotOfLand(String landNumber) throws ClassNotFoundException, SQLException {
         try {
             readWriteLock.readLock().lock();
 
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Select * from Lot where planNumber='" + planNumber + "'";
+            String sql = "Select * from Lot where landNumber='" +landNumber + "'";
             ResultSet rst = DBHandler.getData(conn, sql);
             ArrayList<Lot> lotList = new ArrayList();
             while (rst.next()) {
-                Lot lot = new Lot(rst.getString("LotNumber"), rst.getInt("NumberOfAcres"), rst.getInt("NumberOfRoods"), rst.getInt("NumberOfPerches"));
+                Land searchLand = LandController.searchLand(landNumber);
+                Lot lot = new Lot(landNumber,rst.getString("lotNumber"), rst.getInt("numberOfAcres"),rst.getInt("NumberOfRoods"), rst.getInt("NumberOfPerches"),rst.getString("permitNumber"),rst.getString("permitIssueDate"),rst.getString("grantNumber"),rst.getString("grantIssueDate"),searchLand );               
                 lotList.add(lot);
             }
             return lotList;
@@ -73,15 +73,16 @@ public class LotController {
         }
     }
 
-    public static ArrayList<Lot> getAvailableLotOfLand(String planNumber) throws ClassNotFoundException, SQLException {
+    public static ArrayList<Lot> getAvailableLotOfLand(String landNumber) throws ClassNotFoundException, SQLException {
         try {
             readWriteLock.readLock().lock();
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Select * from Lot where planNumber='" + planNumber + "' and isAvailabal = 0 ";
+            String sql = "Select * from Lot where landNumber='" + landNumber + "' and isAvailabal = 0 ";
             ResultSet rst = DBHandler.getData(conn, sql);
             ArrayList<Lot> lotList = new ArrayList();
             while (rst.next()) {
-                Lot lot = new Lot(rst.getString("LotNumber"), rst.getInt("NumberOfAcres"), rst.getInt("NumberOfRoods"), rst.getInt("NumberOfPerches"));
+                Land searchLand = LandController.searchLand(landNumber);
+                Lot lot = new Lot(landNumber,rst.getString("lotNumber"), rst.getInt("numberOfAcres"),rst.getInt("NumberOfRoods"), rst.getInt("NumberOfPerches"),rst.getString("permitNumber"),rst.getString("permitIssueDate"),rst.getString("grantNumber"),rst.getString("grantIssueDate"),searchLand );               
                 lotList.add(lot);
             }
             return lotList;
@@ -96,7 +97,7 @@ public class LotController {
             readWriteLock.writeLock().lock();
 
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "Update  Lot Set  NumberOfAcres='" + lot.getNumberOfAcres() + "', NumberOfPerches='" + lot.getNumberOfPerches() + "',NumberofRoods='" + lot.getNumberofRoods() + "',isAvailabal='" + lot.getIsAvilable() + "' Where  LotNumber='" + lot.getLotNumber() + "'";
+            String sql = "Update  Lot Set  NumberOfAcres='" + lot.getNumberOfAcres() + "', NumberOfPerches='" + lot.getNumberOfPerches() + "', NumberofRoods='" + lot.getNumberofRoods() + "', permitNumber='" + lot.getPermitNumber() + "', permitIssueDate='"+lot.getPermitIssueDate()+"',Is_p_certified='"+lot.getIs_p_certified()+"',grantNumber= '"+lot.getGrantNumber()+"',grantIssueDate='"+lot.getGrantIssueDate()+"' Where  LotNumber='" + lot.getLotNumber() + "' and landNumber='"+lot.getLandNumber()+"'";
             int res = DBHandler.setData(conn, sql);
             return res > 0;
         } finally {
@@ -112,8 +113,8 @@ public class LotController {
             String sql = "Select * From Lot order by lotNumber Desc limit 1";
             ResultSet rst = DBHandler.getData(conn, sql);
             if (rst.next()) {
-                Land Land = LandController.searchLand(rst.getString("PlanNumber"));
-                Lot lot = new Lot(rst.getString("LotNumber"), rst.getInt("NumberOfAcres"), rst.getInt("NumberOfPerches"), rst.getInt("NumberOfRoods"), Land);
+                Land searchLand = LandController.searchLand(rst.getString("landNumber"));
+                Lot lot = new Lot(rst.getString("landNumber"),rst.getString("lotNumber"), rst.getInt("numberOfAcres"),rst.getInt("NumberOfRoods"), rst.getInt("NumberOfPerches"),rst.getString("permitNumber"),rst.getString("permitIssueDate"),rst.getString("grantNumber"),rst.getString("grantIssueDate"),searchLand );               
                 return lot;
             } else {
                 return null;
