@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import las.controllers.GramaNiladariDivisionController;
 import las.models.GramaNiladariDivision;
-import las.models.Permit;
+import las.models.Lot;
 
 /**
  *
@@ -62,15 +62,15 @@ public class GramaNiladariDivisionControllerImpl extends UnicastRemoteObject imp
     }
 
     @Override
-    public ArrayList<Permit> getPermitsToCertify(String divisionnumber) throws SQLException, ClassNotFoundException {
+    public ArrayList<Lot> getPermitsToCertify(String divisionnumber) throws RemoteException, SQLException, ClassNotFoundException {
         return gnd.getPermitsToCertify(divisionnumber);
-
     }
-    
+
     @Override
-    public ArrayList<Permit> getAllPermitsToCertify() throws SQLException, ClassNotFoundException {
+    public ArrayList<Lot> getAllPermitsToCertify() throws RemoteException, SQLException, ClassNotFoundException {
         return gnd.getAllPermitsToCertify();
-
     }
+
+    
 
 }

@@ -144,13 +144,14 @@ public class GramaNiladariDivisionController {
         }
     }
 
-    public static ArrayList<Permit> getPermitsToCertify(String divisionnumber) throws SQLException, ClassNotFoundException {
+    public static ArrayList<Lot> getPermitsToCertify(String divisionnumber) throws SQLException, ClassNotFoundException {
+        //recorrected
         try {
             readWriteLock.readLock().lock();
             Connection conn = DBConnection.getDBConnection().getConnection();
-            String sql = "select * from permit natural join lot natural join land natural join gnd where certified=0 and datediff(curdate(),permitissuedate)>365 and gnd.divisionnumber='" + divisionnumber + "' ;";
+            String sql = "select * from lot natural join land natural join gnd where is_p_certified=0 and datediff(curdate(),permitissuedate)>365 and gnd.divisionnumber='" + divisionnumber + "' ;";
             ResultSet rst = DBHandler.getData(conn, sql);
-            ArrayList<Permit> permitList = new ArrayList<>();
+            ArrayList<Lot> lotList = new ArrayList<>();
             while (rst.next()) {
                 Client searchClient = ClientController.searchClient(rst.getString("NIC"));
                 Lot searchLot = LotController.searchLot(rst.getString("LotNumber"));
