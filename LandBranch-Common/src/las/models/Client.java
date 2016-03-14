@@ -24,7 +24,7 @@ public class Client implements Serializable{
     private int grantOwnershipPosition;
     private int marriedStatus;
     private String spouseName;
-    private String gender;
+    private int gender;
     private int numberOfMarriedSons;
     private int numberOfUnmarriedSons;
 
@@ -35,7 +35,7 @@ public class Client implements Serializable{
 
     }
 
-    public Client(int regNo, String clientName, String NIC, String landnumber, String lotnumber, String address, double annualIncome, int permitOwnershipPosition, int grantOwnershipPosition, int marriedStatus, String spouseName, String gender, int numberOfMarriedSons, int numberOfUnmarriedSons) {
+    public Client(int regNo, String clientName, String NIC, String landnumber, String lotnumber, String address, double annualIncome, int permitOwnershipPosition, int grantOwnershipPosition, int marriedStatus, String spouseName, int gender, int numberOfMarriedSons, int numberOfUnmarriedSons) {
         this.regNo = regNo;
         this.clientName = clientName;
         this.NIC = NIC;
@@ -149,11 +149,11 @@ public class Client implements Serializable{
         this.spouseName = spouseName;
     }
 
-    public String getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(int gender) {
         this.gender = gender;
     }
 
